@@ -32,7 +32,7 @@ RUN apk --no-cache add ca-certificates wget && \
     && mv /tmp/usvn-1.0.7/* /var/www/localhost/htdocs/ \
     && chown -R apache /var/www/localhost/htdocs/public \
     && chown -R apache /var/www/localhost/htdocs/config \
-    && rm -f /tmp/1.0.7.tar.gz
+    && rm -f /tmp/*
 
 ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8 \
@@ -44,7 +44,8 @@ COPY rootfs /
 RUN cat locale.md | xargs -i /usr/glibc-compat/bin/localedef -i {} -f UTF-8 {}.UTF-8 \
     && ln -s /usr/glibc-compat/bin/locale /bin/locale \
     && chmod +x /run.sh \
-    && chown apache:apache -R /var/svn/
+    && chown apache:apache -R /var/svn/ \
+    && rm /glibc* locale.md
 
 EXPOSE 80
 
