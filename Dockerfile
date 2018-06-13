@@ -32,7 +32,7 @@ RUN apk --no-cache add ca-certificates wget && \
     && mv /tmp/usvn-1.0.7/* /var/www/localhost/htdocs/ \
     && chown -R apache /var/www/localhost/htdocs/public \
     && chown -R apache /var/www/localhost/htdocs/config \
-    && rm -f /tmp/*
+    && rm -fr /tmp/*
 
 ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8 \
