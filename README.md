@@ -1,6 +1,6 @@
 ## SVN + Apache + Usvn  
 
-**Requireds:** 
+**Requirements:** 
 
 - **docker** and **docker-compose**  
 
