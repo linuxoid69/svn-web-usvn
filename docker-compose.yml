@@ -1,44 +1,12 @@
 version: '2'
 services:
  svn:
-  networks:
-    - svn-net
-  depends_on:
-    - mysql
-  links:
-    - mysql:mysql
   build: ./
-  image: linuxoid69/svnmanager
-  container_name: svnmanager
-  hostname: svnmanager
-  environment:
-    SVNMANAGER_USER_DB: svnmanager
-    SVNMANAGER_PASSWD_DB: CHANGE_ME
-    DB_HOST: mysql
+  image: linuxoid69/svn-web-usvn
+  container_name: usvn
+  hostname: usvn
   ports:
   - "8080:80"
   volumes:
   - /tmp/svn:/var/svn
   restart: always
-
- mysql:
-  networks:
-    - svn-net
-  image: mysql
-  entrypoint: ['/entrypoint.sh', '--default-authentication-plugin=mysql_native_password']
-  ports:
-  - "3306:3306"
-  container_name: mysql
-  hostname: mysql
-  environment:
-    MYSQL_ROOT_PASSWORD: Fasdfgerg
-    MYSQL_DATABASE: svnmanager
-    MYSQL_USER: svnmanager
-    MYSQL_PASSWORD: CHANGE_ME
-  volumes:
-  - /tmp/db:/var/lib/mysql
-  restart: always
-  command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password
-
-networks:
-  svn-net:
