@@ -27,6 +27,7 @@ RUN apk --no-cache add ca-certificates wget && \
     php5-ctype \
     php5-pdo_mysql \
     php5-pdo_sqlite \
+    php5-iconv \
     && mkdir -p /run/apache2 \
     && tar xfvz /tmp/1.0.7.tar.gz  -C /tmp \
     && mv /tmp/usvn-1.0.7/* /var/www/localhost/htdocs/ \
