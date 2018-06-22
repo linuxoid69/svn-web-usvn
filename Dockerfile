@@ -1,5 +1,5 @@
 FROM alpine
-MAINTAINER Rustam Tagaev <linuxoid69@gmail.com>
+LABEL  maintainer="Rustam Tagaev <linuxoid69@gmail.com>"
 
 ADD https://github.com/usvn/usvn/archive/1.0.7.tar.gz /tmp
 # Install and configure Apache WebDAV and Subversion
