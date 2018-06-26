@@ -1,9 +1,8 @@
-## SVN + Apache + Usvn  
+# SVN + Apache + Usvn
 
-**Requirements:** 
+**Requirements:**
 
 - **docker** and **docker-compose**  
-
 
 **Installation:**  
 
@@ -15,9 +14,10 @@ You need to change volumes path in file docker-compose.yml for persistent.
 volumes:  
   - /tmp/svn:/var/svn  
 ```
+
 Where **/tmp/svn/** path on local machine.  
 
-Next go to http://127.0.0.1:8080/install.php and follow by step.
+Next go to <http://127.0.0.1:8080/install.php> and follow by step.
 
 Fill in the fields as shown below.
 
@@ -25,5 +25,4 @@ Fill in the fields as shown below.
 
 ![step 2](img/2.png)
 
-
-Site application http://www.usvn.info.
+Site application <http://www.usvn.info.>
